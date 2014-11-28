@@ -4,19 +4,21 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//stuff.poteland.com/css/stuff.min.css">
         <script src="//stuff.poteland.com/js/react.min.js"></script>
         <script src="//stuff.poteland.com/js/JSXTransformer.js"></script>
-        <title>__FILENAME__ (__FILESIZE__)</title>
+        <title>pote's box of crap</title>
     </head>
     <body>
-        <h2>__FILENAME__ (__FILESIZE__)</h2>
-        <p><a id="direct-link" href="__PATH__">Direct Link</a></p>
-        <p><a id="torrent" href="__PATH__?torrent">Get through Bittorent</a></p>
+        <ul class="downloads">
+          <li>Size: __FILESIZE__</li>
+          <li><a id="direct-link" href="__PATH__">Direct Link</a></li>
+          <li><a id="torrent" href="__PATH__?torrent">Get through Bittorent</a></li>
+        </ul>
 
-        <div id="rich-preview">
-        </div>
-
-        __PREVIEW__
+        <section id="rich-preview">
+          __PREVIEW__
+        </section>
     </body>
 
     <script type="text/jsx">
@@ -32,7 +34,7 @@
         render: function() {
           return(
             <audio controls>
-              <source src={this.props.path} type={this.props.type}/>
+              <source src={this.props.path} mime={this.props.mime}/>
               Your browser is unable to play this type of file, you can still download it though! :)
             </audio>
           );
@@ -50,7 +52,7 @@
         render: function() {
           return(
             <video controls>
-              <source src={this.props.path} type={this.props.type}/>
+              <source src={this.props.path} mime={this.props.mime}/>
               Your browser is unable to play this type of file, you can still download it though! :)
             </video>
           );
@@ -60,7 +62,7 @@
       Object.keys(audioFormats).forEach(function(format) {
         if (dropName.match(new RegExp(format + "$", "i"))) {
           React.render(
-            <AudioPreview path="__PATH__" type={audioFormats[format]} />,
+            <AudioPreview path="__PATH__" mime={audioFormats[format]} />,
             document.getElementById('rich-preview')
           );
         }
@@ -69,7 +71,7 @@
       Object.keys(videoFormats).forEach(function(format) {
         if (dropName.match(new RegExp(format + "$", "i"))) {
           React.render(
-            <VideoPreview path="__PATH__" type={audioFormats[format]} />,
+            <VideoPreview path="__PATH__" mime={audioFormats[format]} />,
             document.getElementById('rich-preview')
           );
         }
