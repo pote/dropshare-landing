@@ -4,7 +4,7 @@ I use [Dropshare](http://getdropsha.re/) because it's awesome, I like to have co
 
 ## What this is
 
-Dropshare allows you to use a custom html file as a way to present your drops, it automatically previews images but it does nothingfor audio and video files, so I decided to write my own thing.
+Dropshare allows you to use a custom html file as a way to present your drops, it automatically previews images but it does nothing for audio and video files, so I decided to write my own thing.
 
 ## Features
 
@@ -18,3 +18,14 @@ This landing page has the following features
 ## Stack
 
 It's pretty much plain html + css + javascript. It uses [React.js](http://facebook.github.io/react/) because I kinda wanted to try it, I'm liking it so far.
+
+## Using it
+
+Dropshare takes the file from the `~/Documents/Dropshare-LandingPage.html` so I suggest creating a symbolic link to the file from whever you're keeping the repository.
+
+```bash
+$ git clone git@github.com:pote/dropshare-landing.git && cd dropshare-landing
+$ ln -s $PWD/Dropshare-LandingPage.html $HOME/Documents/Dropshare-LandingPage.html
+```
+
+And you're done!
