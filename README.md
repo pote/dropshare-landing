@@ -29,3 +29,11 @@ $ ln -s $PWD/Dropshare-LandingPage.html $HOME/Documents/Dropshare-LandingPage.ht
 ```
 
 And you're done!
+
+## Previews
+
+Here is a list of 3 drops you can use for testing:
+
+* [Video](http://stuff.poteland.com/0dHeIsGinF)
+* [Image](http://stuff.poteland.com/MedEy0fuhr)
+* [Audio](http://stuff.poteland.com/Y8p5rPBC6R)
