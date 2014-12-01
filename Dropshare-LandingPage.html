@@ -17,18 +17,44 @@
         </ul>
 
         <section id="rich-preview">
-          __PREVIEW__
         </section>
     </body>
 
     <script type="text/jsx">
+      var dropName = document.querySelector("#direct-link").href
+
+      // Render Images
+
+      var imageFormats = [
+        'png',
+        'jpg',
+      ]
+
+      var ImagePreview = React.createClass({
+        render: function() {
+          return(
+            <img src={this.props.path}/>
+          );
+        }
+      });
+
+      imageFormats.forEach(function(format) {
+        if (dropName.match(new RegExp(format + "$", "i"))) {
+          React.render(
+            <ImagePreview path="__PATH__"/>,
+            document.getElementById('rich-preview')
+          );
+        }
+      });
+
+
+      // Render Audio
+
       var audioFormats = {
         mp3: 'audio/mpeg',
         ogg: 'audio/ogg',
         wav: 'audio/wav'
       }
-
-      var dropName = document.querySelector("#direct-link").href
 
       var AudioPreview = React.createClass({
         render: function() {
@@ -40,6 +66,18 @@
           );
         }
       });
+
+      Object.keys(audioFormats).forEach(function(format) {
+        if (dropName.match(new RegExp(format + "$", "i"))) {
+          React.render(
+            <AudioPreview path="__PATH__" mime={audioFormats[format]} />,
+            document.getElementById('rich-preview')
+          );
+        }
+      });
+
+
+      // Render Video
 
       var videoFormats = {
         mov:  'video/mp4',
@@ -55,15 +93,6 @@
               <source src={this.props.path} mime={this.props.mime}/>
               Your browser is unable to play this type of file, you can still download it though! :)
             </video>
-          );
-        }
-      });
-
-      Object.keys(audioFormats).forEach(function(format) {
-        if (dropName.match(new RegExp(format + "$", "i"))) {
-          React.render(
-            <AudioPreview path="__PATH__" mime={audioFormats[format]} />,
-            document.getElementById('rich-preview')
           );
         }
       });
