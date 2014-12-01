@@ -1,0 +1,193 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/stuff.css">
+  <script src="http://stuff.poteland.com/js/react.min.js"></script><style type="text/css"></style>
+  <script src="http://stuff.poteland.com/js/JSXTransformer.js"></script>
+  <title>pote's box of crap</title>
+  <script>
+  var dropName = document.querySelector("#direct-link").href
+
+  // Render Images
+
+  var imageFormats = [
+  'png',
+  'jpg',
+  ]
+
+  var ImagePreview = React.createClass({displayName: 'ImagePreview',
+  render: function() {
+    return(
+      React.createElement("img", {src: this.props.path})
+    );
+  }
+});
+
+imageFormats.forEach(function(format) {
+  if (dropName.match(new RegExp(format + "$", "i"))) {
+    React.render(
+      React.createElement(ImagePreview, {path: "0dHeIsGinF/bYjX6NidqZ.mov"}),
+      document.getElementById('rich-preview')
+    );
+  }
+});
+
+
+// Render Audio
+
+var audioFormats = {
+  mp3: 'audio/mpeg',
+  ogg: 'audio/ogg',
+  wav: 'audio/wav'
+}
+
+var AudioPreview = React.createClass({displayName: 'AudioPreview',
+render: function() {
+  return(
+    React.createElement("audio", {controls: true},
+    React.createElement("source", {src: this.props.path, mime: this.props.mime}),
+    "Your browser is unable to play this type of file, you can still download it though! :)"
+    )
+    );
+  }
+});
+
+Object.keys(audioFormats).forEach(function(format) {
+  if (dropName.match(new RegExp(format + "$", "i"))) {
+    React.render(
+    React.createElement(AudioPreview, {path: "0dHeIsGinF/bYjX6NidqZ.mov", mime: audioFormats[format]}),
+    document.getElementById('rich-preview')
+    );
+  }
+});
+
+
+// Render Video
+
+var videoFormats = {
+  mov:  'video/mp4',
+  mp4:  'video/mp4',
+  webm: 'video/webm',
+  ogg: 'video/ogg',
+}
+
+var VideoPreview = React.createClass({displayName: 'VideoPreview',
+render: function() {
+  return(
+  React.createElement("video", {controls: true},
+  React.createElement("source", {src: this.props.path, mime: this.props.mime}),
+  "Your browser is unable to play this type of file, you can still download it though! :)"
+  )
+  );
+}
+});
+
+Object.keys(videoFormats).forEach(function(format) {
+  if (dropName.match(new RegExp(format + "$", "i"))) {
+    React.render(
+    React.createElement(VideoPreview, {path: "0dHeIsGinF/bYjX6NidqZ.mov", mime: audioFormats[format]}),
+    document.getElementById('rich-preview')
+    );
+  }
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHJhbnNmb3JtZWQuanMiLCJzb3VyY2VzIjpbIklubGluZSBKU1ggc2NyaXB0Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0EsTUFBTSxJQUFJLFFBQVEsR0FBRyxRQUFRLENBQUMsYUFBYSxDQUFDLGNBQWMsQ0FBQyxDQUFDLElBQUk7O0FBRWhFLE1BQU0sZ0JBQWdCOztNQUVoQixJQUFJLFlBQVksR0FBRztRQUNqQixLQUFLO1FBQ0wsS0FBSztBQUNiLE9BQU87O01BRUQsSUFBSSxrQ0FBa0MsNEJBQUE7UUFDcEMsTUFBTSxFQUFFLFdBQVc7VUFDakI7WUFDRSxvQkFBQSxLQUFJLEVBQUEsQ0FBQSxDQUFDLEdBQUEsRUFBRyxDQUFFLElBQUksQ0FBQyxLQUFLLENBQUMsSUFBSyxDQUFFLENBQUE7WUFDNUI7U0FDSDtBQUNULE9BQU8sQ0FBQyxDQUFDOztNQUVILFlBQVksQ0FBQyxPQUFPLENBQUMsU0FBUyxNQUFNLEVBQUU7UUFDcEMsSUFBSSxRQUFRLENBQUMsS0FBSyxDQUFDLElBQUksTUFBTSxDQUFDLE1BQU0sR0FBRyxHQUFHLEVBQUUsR0FBRyxDQUFDLENBQUMsRUFBRTtVQUNqRCxLQUFLLENBQUMsTUFBTTtZQUNWLG9CQUFDLFlBQVksRUFBQSxDQUFBLENBQUMsSUFBQSxFQUFJLENBQUMsMkJBQTJCLENBQUUsQ0FBQTtZQUNoRCxRQUFRLENBQUMsY0FBYyxDQUFDLGNBQWMsQ0FBQztXQUN4QyxDQUFDO1NBQ0g7QUFDVCxPQUFPLENBQUMsQ0FBQztBQUNUOztBQUVBLE1BQU0sZUFBZTs7TUFFZixJQUFJLFlBQVksR0FBRztRQUNqQixHQUFHLEVBQUUsWUFBWTtRQUNqQixHQUFHLEVBQUUsV0FBVztRQUNoQixHQUFHLEVBQUUsV0FBVztBQUN4QixPQUFPOztNQUVELElBQUksa0NBQWtDLDRCQUFBO1FBQ3BDLE1BQU0sRUFBRSxXQUFXO1VBQ2pCO1lBQ0Usb0JBQUEsT0FBTSxFQUFBLENBQUEsQ0FBQyxRQUFBLEVBQUMsQ0FBQSxFQUFBO2NBQ04sb0JBQUEsUUFBTyxFQUFBLENBQUEsQ0FBQyxHQUFBLEVBQUcsQ0FBRSxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksRUFBQyxDQUFDLElBQUEsRUFBSSxDQUFFLElBQUksQ0FBQyxLQUFLLENBQUMsSUFBSyxDQUFFLENBQUEsRUFBQTtBQUFBLGNBQUEsd0ZBQUE7QUFBQSxZQUVoRCxDQUFBO1lBQ1I7U0FDSDtBQUNULE9BQU8sQ0FBQyxDQUFDOztNQUVILE1BQU0sQ0FBQyxJQUFJLENBQUMsWUFBWSxDQUFDLENBQUMsT0FBTyxDQUFDLFNBQVMsTUFBTSxFQUFFO1FBQ2pELElBQUksUUFBUSxDQUFDLEtBQUssQ0FBQyxJQUFJLE1BQU0sQ0FBQyxNQUFNLEdBQUcsR0FBRyxFQUFFLEdBQUcsQ0FBQyxDQUFDLEVBQUU7VUFDakQsS0FBSyxDQUFDLE1BQU07WUFDVixvQkFBQyxZQUFZLEVBQUEsQ0FBQSxDQUFDLElBQUEsRUFBSSxDQUFDLDJCQUFBLEVBQTJCLENBQUMsSUFBQSxFQUFJLENBQUUsWUFBWSxDQUFDLE1BQU0sQ0FBRSxDQUFBLENBQUcsQ0FBQTtZQUM3RSxRQUFRLENBQUMsY0FBYyxDQUFDLGNBQWMsQ0FBQztXQUN4QyxDQUFDO1NBQ0g7QUFDVCxPQUFPLENBQUMsQ0FBQztBQUNUOztBQUVBLE1BQU0sZUFBZTs7TUFFZixJQUFJLFlBQVksR0FBRztRQUNqQixHQUFHLEdBQUcsV0FBVztRQUNqQixHQUFHLEdBQUcsV0FBVztRQUNqQixJQUFJLEVBQUUsWUFBWTtRQUNsQixHQUFHLEVBQUUsV0FBVztBQUN4QixPQUFPOztNQUVELElBQUksa0NBQWtDLDRCQUFBO1FBQ3BDLE1BQU0sRUFBRSxXQUFXO1VBQ2pCO1lBQ0Usb0JBQUEsT0FBTSxFQUFBLENBQUEsQ0FBQyxRQUFBLEVBQUMsQ0FBQSxFQUFBO2NBQ04sb0JBQUEsUUFBTyxFQUFBLENBQUEsQ0FBQyxHQUFBLEVBQUcsQ0FBRSxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksRUFBQyxDQUFDLElBQUEsRUFBSSxDQUFFLElBQUksQ0FBQyxLQUFLLENBQUMsSUFBSyxDQUFFLENBQUEsRUFBQTtBQUFBLGNBQUEsd0ZBQUE7QUFBQSxZQUVoRCxDQUFBO1lBQ1I7U0FDSDtBQUNULE9BQU8sQ0FBQyxDQUFDOztNQUVILE1BQU0sQ0FBQyxJQUFJLENBQUMsWUFBWSxDQUFDLENBQUMsT0FBTyxDQUFDLFNBQVMsTUFBTSxFQUFFO1FBQ2pELElBQUksUUFBUSxDQUFDLEtBQUssQ0FBQyxJQUFJLE1BQU0sQ0FBQyxNQUFNLEdBQUcsR0FBRyxFQUFFLEdBQUcsQ0FBQyxDQUFDLEVBQUU7VUFDakQsS0FBSyxDQUFDLE1BQU07WUFDVixvQkFBQyxZQUFZLEVBQUEsQ0FBQSxDQUFDLElBQUEsRUFBSSxDQUFDLDJCQUFBLEVBQTJCLENBQUMsSUFBQSxFQUFJLENBQUUsWUFBWSxDQUFDLE1BQU0sQ0FBRSxDQUFBLENBQUcsQ0FBQTtZQUM3RSxRQUFRLENBQUMsY0FBYyxDQUFDLGNBQWMsQ0FBQztXQUN4QyxDQUFDO1NBQ0g7T0FDRixDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgIHZhciBkcm9wTmFtZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjZGlyZWN0LWxpbmtcIikuaHJlZlxuXG4gICAgICAvLyBSZW5kZXIgSW1hZ2VzXG5cbiAgICAgIHZhciBpbWFnZUZvcm1hdHMgPSBbXG4gICAgICAgICdwbmcnLFxuICAgICAgICAnanBnJyxcbiAgICAgIF1cblxuICAgICAgdmFyIEltYWdlUHJldmlldyA9IFJlYWN0LmNyZWF0ZUNsYXNzKHtcbiAgICAgICAgcmVuZGVyOiBmdW5jdGlvbigpIHtcbiAgICAgICAgICByZXR1cm4oXG4gICAgICAgICAgICA8aW1nIHNyYz17dGhpcy5wcm9wcy5wYXRofS8+XG4gICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgICAgfSk7XG5cbiAgICAgIGltYWdlRm9ybWF0cy5mb3JFYWNoKGZ1bmN0aW9uKGZvcm1hdCkge1xuICAgICAgICBpZiAoZHJvcE5hbWUubWF0Y2gobmV3IFJlZ0V4cChmb3JtYXQgKyBcIiRcIiwgXCJpXCIpKSkge1xuICAgICAgICAgIFJlYWN0LnJlbmRlcihcbiAgICAgICAgICAgIDxJbWFnZVByZXZpZXcgcGF0aD1cIjBkSGVJc0dpbkYvYllqWDZOaWRxWi5tb3ZcIi8+LFxuICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3JpY2gtcHJldmlldycpXG4gICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgICAgfSk7XG5cblxuICAgICAgLy8gUmVuZGVyIEF1ZGlvXG5cbiAgICAgIHZhciBhdWRpb0Zvcm1hdHMgPSB7XG4gICAgICAgIG1wMzogJ2F1ZGlvL21wZWcnLFxuICAgICAgICBvZ2c6ICdhdWRpby9vZ2cnLFxuICAgICAgICB3YXY6ICdhdWRpby93YXYnXG4gICAgICB9XG5cbiAgICAgIHZhciBBdWRpb1ByZXZpZXcgPSBSZWFjdC5jcmVhdGVDbGFzcyh7XG4gICAgICAgIHJlbmRlcjogZnVuY3Rpb24oKSB7XG4gICAgICAgICAgcmV0dXJuKFxuICAgICAgICAgICAgPGF1ZGlvIGNvbnRyb2xzPlxuICAgICAgICAgICAgICA8c291cmNlIHNyYz17dGhpcy5wcm9wcy5wYXRofSBtaW1lPXt0aGlzLnByb3BzLm1pbWV9Lz5cbiAgICAgICAgICAgICAgWW91ciBicm93c2VyIGlzIHVuYWJsZSB0byBwbGF5IHRoaXMgdHlwZSBvZiBmaWxlLCB5b3UgY2FuIHN0aWxsIGRvd25sb2FkIGl0IHRob3VnaCEgOilcbiAgICAgICAgICAgIDwvYXVkaW8+XG4gICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgICAgfSk7XG5cbiAgICAgIE9iamVjdC5rZXlzKGF1ZGlvRm9ybWF0cykuZm9yRWFjaChmdW5jdGlvbihmb3JtYXQpIHtcbiAgICAgICAgaWYgKGRyb3BOYW1lLm1hdGNoKG5ldyBSZWdFeHAoZm9ybWF0ICsgXCIkXCIsIFwiaVwiKSkpIHtcbiAgICAgICAgICBSZWFjdC5yZW5kZXIoXG4gICAgICAgICAgICA8QXVkaW9QcmV2aWV3IHBhdGg9XCIwZEhlSXNHaW5GL2JZalg2TmlkcVoubW92XCIgbWltZT17YXVkaW9Gb3JtYXRzW2Zvcm1hdF19IC8+LFxuICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3JpY2gtcHJldmlldycpXG4gICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgICAgfSk7XG5cblxuICAgICAgLy8gUmVuZGVyIFZpZGVvXG5cbiAgICAgIHZhciB2aWRlb0Zvcm1hdHMgPSB7XG4gICAgICAgIG1vdjogICd2aWRlby9tcDQnLFxuICAgICAgICBtcDQ6ICAndmlkZW8vbXA0JyxcbiAgICAgICAgd2VibTogJ3ZpZGVvL3dlYm0nLFxuICAgICAgICBvZ2c6ICd2aWRlby9vZ2cnLFxuICAgICAgfVxuXG4gICAgICB2YXIgVmlkZW9QcmV2aWV3ID0gUmVhY3QuY3JlYXRlQ2xhc3Moe1xuICAgICAgICByZW5kZXI6IGZ1bmN0aW9uKCkge1xuICAgICAgICAgIHJldHVybihcbiAgICAgICAgICAgIDx2aWRlbyBjb250cm9scz5cbiAgICAgICAgICAgICAgPHNvdXJjZSBzcmM9e3RoaXMucHJvcHMucGF0aH0gbWltZT17dGhpcy5wcm9wcy5taW1lfS8+XG4gICAgICAgICAgICAgIFlvdXIgYnJvd3NlciBpcyB1bmFibGUgdG8gcGxheSB0aGlzIHR5cGUgb2YgZmlsZSwgeW91IGNhbiBzdGlsbCBkb3dubG9hZCBpdCB0aG91Z2ghIDopXG4gICAgICAgICAgICA8L3ZpZGVvPlxuICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICAgIH0pO1xuXG4gICAgICBPYmplY3Qua2V5cyh2aWRlb0Zvcm1hdHMpLmZvckVhY2goZnVuY3Rpb24oZm9ybWF0KSB7XG4gICAgICAgIGlmIChkcm9wTmFtZS5tYXRjaChuZXcgUmVnRXhwKGZvcm1hdCArIFwiJFwiLCBcImlcIikpKSB7XG4gICAgICAgICAgUmVhY3QucmVuZGVyKFxuICAgICAgICAgICAgPFZpZGVvUHJldmlldyBwYXRoPVwiMGRIZUlzR2luRi9iWWpYNk5pZHFaLm1vdlwiIG1pbWU9e2F1ZGlvRm9ybWF0c1tmb3JtYXRdfSAvPixcbiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyaWNoLXByZXZpZXcnKVxuICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICAgIH0pO1xuICAgICJdfQ==</script></head>
+<body>
+  <ul class="downloads">
+    <li class="top">Size: 1.5 MB</li>
+    <li><a id="direct-link" href="http://stuff.poteland.com/0dHeIsGinF/bYjX6NidqZ.mov">Direct Link</a></li>
+    <li><a id="torrent" href="http://stuff.poteland.com/0dHeIsGinF/bYjX6NidqZ.mov?torrent">BitTorrent</a></li>
+  </ul>
+
+  <section id="rich-preview"><video controls="" data-reactid=".0"><source src="http://stuff.poteland.com/0dHeIsGinF/bYjX6NidqZ.mov" data-reactid=".0.0"><span data-reactid=".0.1">Your browser is unable to play this type of file, you can still download it though! :)</span></video></section>
+
+
+    <script type="text/jsx">
+      var dropName = document.querySelector("#direct-link").href
+
+      // Render Images
+
+      var imageFormats = [
+      'png',
+      'jpg',
+      ]
+
+      var ImagePreview = React.createClass({
+        render: function() {
+          return(
+          <img src={this.props.path}/>
+          );
+        }
+      });
+
+      imageFormats.forEach(function(format) {
+        if (dropName.match(new RegExp(format + "$", "i"))) {
+          React.render(
+          <ImagePreview path="http://stuff.poteland.com/0dHeIsGinF/bYjX6NidqZ.mov"/>,
+          document.getElementById('rich-preview')
+          );
+        }
+      });
+
+
+      // Render Audio
+
+      var audioFormats = {
+        mp3: 'audio/mpeg',
+        ogg: 'audio/ogg',
+        wav: 'audio/wav'
+      }
+
+      var AudioPreview = React.createClass({
+        render: function() {
+          return(
+          <audio controls>
+            <source src={this.props.path} mime={this.props.mime}/>
+            Your browser is unable to play this type of file, you can still download it though! :)
+          </audio>
+          );
+        }
+      });
+
+      Object.keys(audioFormats).forEach(function(format) {
+        if (dropName.match(new RegExp(format + "$", "i"))) {
+          React.render(
+          <AudioPreview path="http://stuff.poteland.com/0dHeIsGinF/bYjX6NidqZ.mov" mime={audioFormats[format]} />,
+          document.getElementById('rich-preview')
+          );
+        }
+      });
+
+
+      // Render Video
+
+      var videoFormats = {
+        mov:  'video/mp4',
+        mp4:  'video/mp4',
+        webm: 'video/webm',
+        ogg: 'video/ogg',
+      }
+
+      var VideoPreview = React.createClass({
+        render: function() {
+          return(
+          <video controls>
+            <source src={this.props.path} mime={this.props.mime}/>
+            Your browser is unable to play this type of file, you can still download it though! :)
+          </video>
+          );
+        }
+      });
+
+      Object.keys(videoFormats).forEach(function(format) {
+        if (dropName.match(new RegExp(format + "$", "i"))) {
+          React.render(
+          <VideoPreview path="http://stuff.poteland.com/0dHeIsGinF/bYjX6NidqZ.mov" mime={audioFormats[format]} />,
+          document.getElementById('rich-preview')
+          );
+        }
+      });
+    </script>
+
+  </body></html>
