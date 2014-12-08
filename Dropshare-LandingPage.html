@@ -16,10 +16,10 @@
         </span>
 
         <ul class="controls">
-          <li>Size: __FILESIZE__</li>
-          <li><a id="direct-link" href="__PATH__"><i class="fa fa-link"></i></a></li>
-          <li><a id="torrent" href="__PATH__?torrent"><i class="fa fa-share-alt"></i></a></li>
-          <li><a id="magnet" href=""><i class="fa fa-magnet"></i></a></li>
+          <li>Size:<span class="icon">__FILESIZE__</span></li>
+          <li>Direct Link <span class="icon"><a id="direct-link" href="__PATH__"><i class="fa fa-link"></i></a></span></li>
+          <li>Torrent <span class="icon"><a id="torrent" href="__PATH__?torrent"><i class="fa fa-share-alt"></i></a></span></li>
+          <li>Magnet <span class="icon"><a id="magnet" href=""><i class="fa fa-magnet"></i></a></span></li>
         </ul>
       </header>
 
@@ -66,8 +66,8 @@
       var AudioPreview = React.createClass({
         render: function() {
           return(
-            <audio controls>
-              <source className="preview" src={this.props.path} mime={this.props.mime}/>
+            <audio controls className="preview">
+              <source src={this.props.path} mime={this.props.mime}/>
               Your browser is unable to play this type of file, you can still download it though! :)
             </audio>
           );
@@ -96,8 +96,8 @@
       var VideoPreview = React.createClass({
         render: function() {
           return(
-            <video controls>
-              <source className="preview" src={this.props.path} mime={this.props.mime}/>
+            <video controls className="preview">
+              <source src={this.props.path} mime={this.props.mime}/>
               Your browser is unable to play this type of file, you can still download it though! :)
             </video>
           );
