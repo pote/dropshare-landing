@@ -4,20 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="//stuff.poteland.com/css/stuff.min.css">
+        <link rel="stylesheet" href="//stuff.poteland.com/css/stuff.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="//stuff.poteland.com/js/react.min.js"></script>
         <script src="//stuff.poteland.com/js/JSXTransformer.js"></script>
-        <title>pote's box of crap</title>
     </head>
     <body>
+      <header>
         <ul class="downloads">
           <li class="top">Size: __FILESIZE__</li>
-          <li><a id="direct-link" href="__PATH__">Direct Link</a></li>
+          <li><a id="direct-link" href="__PATH__"><i class="fa fa-link"></i></a></li>
           <li><a id="torrent" href="__PATH__?torrent">BitTorrent</a></li>
+          <li><a id="magnet" href=""><i class="fa fa-magnet"></i></a></li>
         </ul>
+      </header>
 
-        <section id="rich-preview">
-        </section>
+      <section id="rich-preview">
+      </section>
     </body>
 
     <script type="text/jsx">
@@ -33,7 +36,7 @@
       var ImagePreview = React.createClass({
         render: function() {
           return(
-            <img src={this.props.path}/>
+            <img className="preview" src={this.props.path} alt="You look wonderful today!"/>
           );
         }
       });
@@ -60,7 +63,7 @@
         render: function() {
           return(
             <audio controls>
-              <source src={this.props.path} mime={this.props.mime}/>
+              <source className="preview" src={this.props.path} mime={this.props.mime}/>
               Your browser is unable to play this type of file, you can still download it though! :)
             </audio>
           );
@@ -90,7 +93,7 @@
         render: function() {
           return(
             <video controls>
-              <source src={this.props.path} mime={this.props.mime}/>
+              <source className="preview" src={this.props.path} mime={this.props.mime}/>
               Your browser is unable to play this type of file, you can still download it though! :)
             </video>
           );
