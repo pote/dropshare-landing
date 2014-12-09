@@ -134,4 +134,15 @@
         }
       });
     </script>
+
+    <script>
+      var torrentURL = document.querySelector("#torrent-link").href
+      var xmlHttp = null;
+      xmlHttp = new XMLHttpRequest();
+      xmlHttp.open("GET", torrentURL, false);
+      xmlHttp.send(null);
+      torrentData = window.Bencode.decode(xmlHttp.responseText);
+
+
+    </script>
 </html>
