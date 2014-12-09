@@ -32,8 +32,8 @@ And you're done!
 
 ## Previews
 
-Here is a list of 3 drops you can use for testing:
+This is what it looks like right now, still lots of work to do though, take a look at the [TODO](./TODO.md) file.
 
-* [Video](http://stuff.poteland.com/0dHeIsGinF)
-* [Image](http://stuff.poteland.com/MedEy0fuhr)
-* [Audio](http://stuff.poteland.com/Y8p5rPBC6R)
+![preview](./examples/screenshot.png)
+
+
