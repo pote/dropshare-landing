@@ -8,18 +8,37 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="//stuff.poteland.com/js/react.min.js"></script>
         <script src="//stuff.poteland.com/js/JSXTransformer.js"></script>
+        <script src="//stuff.poteland.com/js/bencode.js"></script>
     </head>
     <body>
       <header>
         <span class="logo">
-          <a href="http://poteland.com"><img src="//stuff.poteland.com/avatars/redmage.jpeg"/></a>
+          <a href="http://poteland.com" tatget="_blank"><img src="//stuff.poteland.com/avatars/redmage.jpeg"/></a>
         </span>
 
         <ul class="controls">
-          <li>Size:<span class="icon">__FILESIZE__</span></li>
-          <li>Direct Link <span class="icon"><a id="direct-link" href="__PATH__"><i class="fa fa-link"></i></a></span></li>
-          <li>Torrent <span class="icon"><a id="torrent" href="__PATH__?torrent"><i class="fa fa-share-alt"></i></a></span></li>
-          <li>Magnet <span class="icon"><a id="magnet" href=""><i class="fa fa-magnet"></i></a></span></li>
+          <li>
+            <i>__FILESIZE__</i>
+            <p>Size</p>
+          </li>
+          <li class="button">
+            <a id="direct-link" href="__PATH__">
+              <i class="fa fa-link"></i>
+              <p>Link</p>
+            </a>
+          </li>
+          <li class="button" id="magnet">
+            <a id="magnet-link" href="">
+              <i class="fa fa-magnet"></i>
+              <p>Magnet</p>
+            </a>
+          </li>
+          <li class="button">
+            <a id="torrent-link" href="__PATH__?torrent">
+              <i class="fa fa-share-alt"></i>
+              <p>Torrent</p>
+            </a>
+          </li>
         </ul>
       </header>
 
@@ -35,6 +54,7 @@
       var imageFormats = [
         'png',
         'jpg',
+        'gif',
       ]
 
       var ImagePreview = React.createClass({
@@ -60,7 +80,8 @@
       var audioFormats = {
         mp3: 'audio/mpeg',
         ogg: 'audio/ogg',
-        wav: 'audio/wav'
+        wav: 'audio/wav',
+        m4a: 'audio/mp4'
       }
 
       var AudioPreview = React.createClass({
