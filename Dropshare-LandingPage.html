@@ -8,7 +8,6 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="//stuff.poteland.com/js/react.min.js"></script>
         <script src="//stuff.poteland.com/js/JSXTransformer.js"></script>
-        <script src="//stuff.poteland.com/js/bencode.js"></script>
     </head>
     <body>
       <header>
@@ -21,24 +20,24 @@
             <i>__FILESIZE__</i>
             <p>Size</p>
           </li>
-          <li class="button">
-            <a id="direct-link" href="__PATH__">
+          <a id="direct-link" href="__PATH__">
+            <li class="button">
               <i class="fa fa-link"></i>
               <p>Link</p>
-            </a>
-          </li>
-          <li class="button" id="magnet">
-            <a id="magnet-link" href="">
+            </li>
+          </a>
+          <a id="magnet-link" href="">
+            <li class="button" id="magnet">
               <i class="fa fa-magnet"></i>
               <p>Magnet</p>
-            </a>
-          </li>
-          <li class="button">
-            <a id="torrent-link" href="__PATH__?torrent">
+            </li>
+          </a>
+          <a id="torrent-link" href="__PATH__?torrent">
+            <li class="button">
               <i class="fa fa-share-alt"></i>
               <p>Torrent</p>
-            </a>
-          </li>
+            </li>
+          </a>
         </ul>
       </header>
 

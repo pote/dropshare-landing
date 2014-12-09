@@ -44,6 +44,10 @@ header {
   margin-bottom: 5px;
 }
 
+ul.controls > a {
+  display: inline-block;
+}
+
 ul.controls > li {
   display: inline-block;
 }
@@ -64,9 +68,8 @@ ul.controls > li {
   line-height: 18px;
 }
 
-.controls li a {
+.controls a {
   text-decoration: none;
-  color: black;
 }
 
 .controls li.button:hover {
