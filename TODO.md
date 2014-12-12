@@ -6,3 +6,4 @@
   * References: [What trello does](http://stackoverflow.com/questions/17527870/how-does-trello-access-the-users-clipboard)
 * Add metadata for music/video files.
 * Show pictures in the orientation they are meant to be shown.
+* Add epub/mobi reader.
